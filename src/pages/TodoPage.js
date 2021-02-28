@@ -11,12 +11,12 @@ const TodoPage = () => {
           return res.json();
         }
       })
-      .then((data) => console.log(data));
+      .then((data) => setTodo(data));
   }, []);
 
   return (
     <div>
-      <Card />
+      <Card listOfTodos={todo} />
     </div>
   );
 };
