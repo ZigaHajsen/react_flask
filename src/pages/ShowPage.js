@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
+import Delete from '../components/Delete';
 
 const ShowPage = () => {
   const [todo, setTodo] = useState([]);
@@ -15,6 +16,9 @@ const ShowPage = () => {
     <div>
       {todo.length > 0 &&
         todo.map((data) => <div key={data.id}>{data.content}</div>)}
+      <Delete id={id} />
+      <hr />
+      <Link to='/'>BAck to todos</Link>
     </div>
   );
 };
